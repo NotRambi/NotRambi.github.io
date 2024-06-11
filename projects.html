@@ -11,23 +11,25 @@
         
     </head>
     <body>
-        <header>
-            <div class="title">
-                <h1 class="tiny5-regular">My Projects</h1>
+        <div class="bodyDiv">
+            <header>
+                <div class="title">
+                    <h1 class="tiny5-regular">My Projects</h1>
+                </div>
+                <div class="LangBtnDiv">
+                    <button onclick="changeLang()" class="langBtn" id="langBtn">EN</button>
+                </div>
+            </header>
+            <div class="en">
+                <nav id="navBar">
+                    <a id="aboutBtn" href="index.html">Back to the main page</a>
+                </nav>
             </div>
-            <div class="LangBtnDiv">
-                <button onclick="changeLang()" class="langBtn" id="langBtn">EN</button>
+            <div class="it">
+                <nav id="navBar">
+                    <a id="aboutBtn" href="index.html">Torna alla pagina principale</a>
+                </nav>
             </div>
-        </header>
-        <div class="en">
-            <nav id="navBar">
-                <a id="aboutBtn" href="index.html">Back to the main page</a>
-            </nav>
-        </div>
-        <div class="it">
-            <nav id="navBar">
-                <a id="aboutBtn" href="index.html">Torna alla pagina principale</a>
-            </nav>
         </div>
     </body>
     <script src="script/LangScript.js"></script>
