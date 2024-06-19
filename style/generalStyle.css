@@ -116,11 +116,12 @@ nav a:hover::after{
     padding: 1rem 0;
     margin-left: 1rem;
 }
-.section h2{
-    margin-bottom: 1rem;
-}
 .section h3{
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.section h4{
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
 .section h5{
@@ -146,6 +147,9 @@ nav a:hover::after{
 .section ul li span{
     scale: 0.6;
 }
+.subSection{
+    margin-left: 2rem;
+}
 .brAfter{
     padding-bottom: 0.5rem;
 }
@@ -156,9 +160,7 @@ nav a:hover::after{
     gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
-}
-.OtherSection{
-    margin-left:0.5rem;
+    margin-top: 1rem;
 }
 .GitHubSection svg{
     scale: 0.8;
@@ -199,6 +201,9 @@ nav a:hover::after{
     gap: 2rem;
     flex-direction: row-reverse;
 }
+.text_plus_img_reverse p {
+    margin-left: 0;
+}
 .imgDiv{
     display: flex;
     justify-content: center;
@@ -216,13 +221,17 @@ nav a:hover::after{
     width: 100%;
     display: flex;
     gap: 2rem;
+    margin-left: 2rem;
     margin-bottom: 2rem;
+}
+.OutThinkSection p{
+    margin-left: 0;
 }
 .imgDiv2{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 2rem;
+    margin-right: 4rem;
     margin-top: 2rem;
 }
 .imgDiv2 img{
@@ -274,24 +283,27 @@ nav a:hover::after{
     .text_plus_img{
         flex-direction: column;
     }
-    .text_plus_img_reverse{
-        flex-direction: column;
-    }
-    .OutThinkSection{
-        flex-direction: column;
-    }
     .imgDiv{
         margin-right: 0;
+    }
+    .imgDiv img{
+        margin-top: 0;
+    }
+
+    .OutThinkSection{
+        flex-direction: column;
+        margin-left: 0;
     }
     .imgDiv2{
         margin-right: 0;
         margin-top: 0;
     }
+
+    .text_plus_img_reverse{
+        flex-direction: column;
+    }
     .imgDiv3{
         margin-left: 0;
-    }
-    .imgDiv img{
-        margin-top: 0;
     }
     .imgDiv3 img{
         margin-top: 0;
