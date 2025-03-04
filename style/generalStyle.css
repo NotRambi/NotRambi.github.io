@@ -6,7 +6,8 @@
     padding: 0;
     box-sizing: border-box;
     color: #ddd;
-    cursor: default;
+    cursor: none;
+    user-select: none;
     /* cambia lo spazio verticale tra due righe dello stesso testo */
     line-height: 1.4;
 }
@@ -40,8 +41,43 @@ body{
     border-right-style:solid;
     border-image: linear-gradient(to bottom, #111, #aaa, #111) 1; 
 }
-.clickable{
-    cursor: pointer;
+.clickable-animated{
+    cursor: none;
+}
+.clickable-box:hover{
+    scale: 1.1;
+}
+.clickable-box-mini:hover{
+    scale: 0.6;
+}
+
+/* cursore */
+@media (hover: hover) and (pointer: fine) {
+    :root {
+        --cursor-size: 28px;
+        --bg: #FAF7EE;
+    }
+    #cursor {
+        position: fixed;
+        top: calc(var(--cursor-size) * -0.5);
+        left:  calc(var(--cursor-size) * -0.5);
+        pointer-events: none;
+        mix-blend-mode: difference;  
+        filter: url(#goo);
+    } 
+    .cursor-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--cursor-size);
+        height: var(--cursor-size);
+        border-radius: var(--cursor-size);
+        background: var(--bg);
+        transform-origin: center center;
+    }
+}
+.goo {
+    display: none;
 }
 
 /* header */
@@ -65,11 +101,9 @@ header{
 .LangBtnDiv{
     position: absolute;
     width: 100%;
-    z-index: 1;
     text-align: right;
 }
 .LangBtnDiv button{
-    cursor: pointer;
     background-color: #222;
     border: none;
     height: 2rem;
@@ -209,6 +243,7 @@ nav a:hover::after{
     justify-content: center;
     align-items: center;
     margin-right: 2rem;
+    pointer-events: none;
 }
 .imgDiv img{
     border: #aaa 3px solid;
@@ -233,6 +268,7 @@ nav a:hover::after{
     align-items: center;
     margin-right: 4rem;
     margin-top: 2rem;
+    pointer-events: none;
 }
 .imgDiv2 img{
     height: 200px;
@@ -259,6 +295,7 @@ nav a:hover::after{
     justify-content: center;
     align-items: center;
     margin-left: 2rem;
+    pointer-events: none;
 }
 .imgDiv3 img{
     border: #aaa 3px solid;
