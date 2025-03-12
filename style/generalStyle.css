@@ -31,6 +31,7 @@ body{
     text-wrap: balance;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 .bodyDiv{
     position: relative;
@@ -40,6 +41,9 @@ body{
     border-right-width: 2px;
     border-right-style:solid;
     border-image: linear-gradient(to bottom, #111, #aaa, #111) 1; 
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px); /* Effetto sfocatura */
+    padding: 1rem; 
 }
 .clickable-animated{
     cursor: none;
@@ -234,6 +238,7 @@ nav a:hover::after{
     display: flex;
     gap: 2rem;
     flex-direction: row-reverse;
+    margin-bottom: 2rem;
 }
 .text_plus_img_reverse p {
     margin-left: 0;
@@ -252,6 +257,19 @@ nav a:hover::after{
     width: 200px;
     margin-top: 2rem;
 }
+.imgDiv1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+.imgDiv1 img{
+    border: #aaa 3px solid;
+    border-radius: 10%;
+    height: 200px;
+    width: 200px;
+    margin-top: 2rem;
+}
 .OutThinkSection{
     width: 100%;
     display: flex;
@@ -260,6 +278,16 @@ nav a:hover::after{
     margin-bottom: 2rem;
 }
 .OutThinkSection p{
+    margin-left: 0;
+}
+.BlackJackSection{
+    width: calc(100% - 4rem);
+    display: flex;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+.BlackJackSection p{
     margin-left: 0;
 }
 .imgDiv2{
@@ -331,6 +359,11 @@ nav a:hover::after{
         flex-direction: column;
         margin-left: 0;
     }
+    .BlackJackSection{
+        width: 100%;
+        flex-direction: column;
+        margin-left: 0;
+    }
     .imgDiv2{
         margin-right: 0;
         margin-top: 0;
@@ -359,9 +392,6 @@ nav a:hover::after{
         justify-content: left;
         margin-left: 2rem;
     }
-    .contact{
-        text-align: left;
-    }
 }
 
 @media screen and (max-width: 380px){
@@ -382,9 +412,44 @@ nav a:hover::after{
     nav a{
         font-size: 0.8rem;
     }
-    .contact{
-        text-align: left;
-    }
 }
 
+/* animazione sfondo */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Assicurati che sia sotto il contenuto principale */
+    background: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+}
 
+.matrix-column {
+    position: absolute;
+    top: 0;
+    width: 40px; /* Aumenta la larghezza della colonna */
+    height: 100%;
+    overflow: hidden;
+    animation: fall linear infinite;
+}
+
+.matrix-column span {
+    display: block;
+    font-family: monospace;
+    font-size: 40px; /* Aumenta la dimensione del font */
+    color: #fff;
+    opacity: 0;
+    animation: fade 1s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}

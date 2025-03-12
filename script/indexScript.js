@@ -68,3 +68,31 @@ document.addEventListener('mousemove', onMouseMove, false);
 
 initCursor();
 updateCursor();
+
+// funzione animazione sfondo
+
+// Funzione per creare l'animazione Matrix
+function createMatrixEffect() {
+  const matrix = document.getElementById('matrix');
+  matrix.innerHTML = ''; // Rimuovi le colonne esistenti
+  const columns = Math.floor(window.innerWidth / 40); // Aggiorna la larghezza della colonna
+
+  for (let i = 0; i < columns; i++) {
+      const column = document.createElement('div');
+      column.classList.add('matrix-column');
+      column.style.left = `${i * 40}px`; // Aggiorna la larghezza della colonna
+      column.style.animationDuration = `${Math.random() * 5 + 5}s`;
+
+      for (let j = 0; j < 5; j++) { // Riduci il numero di caratteri per colonna
+          const char = document.createElement('span');
+          char.textContent = Math.random() > 0.5 ? '0' : '1';
+          char.style.animationDelay = `${Math.random() * 10}s`;
+          column.appendChild(char);
+      }
+
+      matrix.appendChild(column);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', createMatrixEffect);
+window.addEventListener('resize', createMatrixEffect);
