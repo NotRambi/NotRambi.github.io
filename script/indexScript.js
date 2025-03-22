@@ -95,4 +95,15 @@ function createMatrixEffect() {
 }
 
 document.addEventListener('DOMContentLoaded', createMatrixEffect);
-window.addEventListener('resize', createMatrixEffect);
+
+let lastWindowWidth = window.innerWidth;
+
+function onResize() {
+  const currentWindowWidth = window.innerWidth;
+  if (currentWindowWidth !== lastWindowWidth) {
+    lastWindowWidth = currentWindowWidth;
+    createMatrixEffect();
+  }
+}
+
+window.addEventListener('resize', onResize);
